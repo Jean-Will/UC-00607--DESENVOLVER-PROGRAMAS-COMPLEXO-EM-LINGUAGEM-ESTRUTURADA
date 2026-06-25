@@ -1,0 +1,5 @@
+Ana Silva;1.65;25;Porto;Python
+Bruno Costa;1.78;30;Lisboa;JavaScript
+Carla Santos;1.70;28;Porto;Java
+Daniel Oliveira;1.82;35;Coimbra;Python
+Eduarda Ferreira;1.60;22;Lisboa;C#
