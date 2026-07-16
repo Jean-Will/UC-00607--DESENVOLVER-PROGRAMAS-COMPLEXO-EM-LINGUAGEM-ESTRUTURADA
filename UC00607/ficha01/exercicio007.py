@@ -67,12 +67,12 @@ for cliente in listaConteudo:
         print(f"O cliente {nome} habita em {dados[1]} \n")
         #nomeClientes.append(cliente)
         #cidadeCliente.append(cliente[1])
-    else:
-        print(f"Nome {nome} invalido ")
+    #else:
+        #print(f"Nome {nome} invalido ")
 
 #print(f"Os clientes {nomeClientes} cidade: {cidadeCliente} ")
 
-cidade = input("Digite o nome da cidade: ")
+cidade = input("Digite o nome da cidade: ").title().strip()
 qtCidade = 0
 
 
@@ -82,4 +82,64 @@ for cliente in listaConteudo:
         qtCidade =+1
 
 print(f"E) A cidade {cidade} tem {qtCidade}  habitantes \n")
+
+
+cidades =[]
+maximo = 0
+nomeMaximo = ""
+
+
+for linha in listaConteudo:
+    dados = linha.split(";")
+    cidades.append(dados[1])
+
+cidadesSemRepetir = list(set(cidades))    
+
+for cid in cidadesSemRepetir:
+    cidades.append(dados[1])
+    qt = cidades.count(cid)
+    if qt > maximo:
+        maximo = qt
+        nomeMaximo = cid
+
+print(f" F) A cidade  com mais habitante e: {nomeMaximo} com o total de {maximo} de habitantes \n")        
+
+################
+
+cidades =[]
+
+for linha in listaConteudo:
+    dados = linha.split(";")
+    cidades.append(dados[1])
+
+cidadesSemRepetir = list(set(cidades))    
+
+for cid in cidadesSemRepetir:
+    qt = cidades.count(cid)
+    total = len(listaConteudo)
+    porcentagem = qt * 100 / total
+
+    print(f" G){cid}: {qt}: {porcentagem:.1f}% ")        
+
+#################################### alterar o campo e voltar a refazer com os novos dados 
+
+city = input("Digite o nome da cidade: ").title().strip()
+for pos, linha in enumerate(listaConteudo):
+    dados = linha.split(";")
+    if dados[1] == city:
+        op = input(f"Deseja mudar o user: {dados[0]}? (s/n) ").lower().strip()
+        if op[0] == 's':
+            newCity = input(f"Para qual nova cidade ira o user {dados[0]}? ").title().strip()
+            dados[1] = newCity
+            newLine = ";".join(dados)
+            listaConteudo[pos] = newLine
+
+print(f"H) {listaConteudo}")            
+#########################################
+
+print(" I)")
+newCont = "\n".join(listaConteudo)
+with open ("UC00607/ficha01/clients.csv","w",encoding="utf-8") as fp:
+    fp.write(newCont)
+print(f"Dados gravados no ficheiro com sucesso!!!")
 
