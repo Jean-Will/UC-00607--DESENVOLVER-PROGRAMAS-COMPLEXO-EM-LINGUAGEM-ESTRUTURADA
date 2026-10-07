@@ -8,7 +8,7 @@ from time import sleep
 cidades = ["Porto","Recife","Ji-Parana","Gondomar"]
 
 def carregar():
-
+    lst.delete(0, END)
     for cid in cidades:
         sleep(0.3)
         lst.insert(END, cid)
