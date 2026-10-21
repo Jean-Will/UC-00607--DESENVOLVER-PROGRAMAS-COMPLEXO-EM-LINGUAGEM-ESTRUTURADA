@@ -5,6 +5,7 @@
 way = "Revisao/notas.csv" 
 with open(way,"r",encoding="utf-8") as fp:
     conteudo = fp.read().split("\n")
+    
 # Determinar a media de cada Aluno 
 for linha in conteudo:
     info = linha.split(";")
@@ -21,7 +22,7 @@ for linha in conteudo:
 for linha in conteudo:
     info = linha.split(";")
     nome = info[0]
-    notas = [int(info[1]), int(info[2]), int(info[3])]
+    notas = [int(info[1]), int(info[2]), int(info[3])] #LISTA DE NOTAS
     maximo = max(notas)
     minimo = min(notas)
     print(f"\nO {nome} tem a nota maxima:{maximo} e a minima: {minimo}")
@@ -32,7 +33,7 @@ for linha in conteudo:
     info = linha.split(";")
     disciplina = info[4]
     if disciplina not in d:
-        d[disciplina] = 1
+        d[disciplina] = info[4]
     else:
         d[disciplina] +=1
 print(f"Qtds favoritas: \n{d}")
