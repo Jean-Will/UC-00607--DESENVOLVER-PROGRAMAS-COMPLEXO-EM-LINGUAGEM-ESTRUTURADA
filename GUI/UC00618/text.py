@@ -35,7 +35,7 @@ bler.grid(row=1,column=0)
 bgravar.grid(row=1,column=1)
 
 nomes = ["Ana","Rui", "Ze"]
-sbox = Spinbox(jan,values=nomes, font=fonte, wrap=True)
+sbox = Spinbox(jan,values=nomes, font=fonte, wrap=True, state="readonly")
 sbox.grid(row=2, column=0)
 
 jan.mainloop()
