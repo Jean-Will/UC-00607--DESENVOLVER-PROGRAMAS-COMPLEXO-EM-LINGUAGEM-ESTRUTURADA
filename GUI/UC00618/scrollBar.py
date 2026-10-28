@@ -22,7 +22,7 @@ lbox.grid(row=0, column=0)
 for elem in nomes:
     lbox.insert(END, elem)
 
-sbar = Scrollbar(jan)
+sbar = Scrollbar(jan, command=lbox.yview)
 sbar.grid(row=0, column=1, sticky="ns")   
 
 
