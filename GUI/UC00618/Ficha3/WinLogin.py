@@ -46,7 +46,7 @@ way = "GUI/UC00618/pass.csv"
 
 windows = Tk()
 windows.title(" -- Login -- ")
-windows.iconbitmap("logopy.ico")
+#windows.iconbitmap("logopy.ico")
 windows.geometry("400x300")
 largura = 400
 altura = 300
@@ -85,7 +85,7 @@ f2.pack(pady=20)
 btnLogin = Button(f2, text="Login", width=10, command=login)
 btnLogin.grid( row=0,column=0,padx=3)
 
-btnNewUser = Button(f2, text="Novo User", width=10, command=newWindowUser)
+btnNewUser = Button(f2, text="Novo User", width=10, command=lambda: newWindowUser(windows))
 btnNewUser.grid(row=0,column=1,padx=3)
 
 btnExit = Button(f2, text="Sair", bg="red", fg="White",width=10 ,command=windows.destroy)

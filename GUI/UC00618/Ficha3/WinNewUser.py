@@ -1,5 +1,7 @@
 from tkinter import *
-from tkinter.ttk import Combobox,Checkbutton
+from tkinter.ttk import Checkbutton
+from funcoes import gravar
+from funcoes import cancelar
 
 
 
@@ -20,6 +22,7 @@ def newWindowUser(windows):
 
     f1 = Frame(winds3)
     f1.pack(pady=20)
+
     
     userNameLabel = Label(f1,text="UserName:")
     entryName = Entry(f1)
@@ -63,10 +66,24 @@ def newWindowUser(windows):
 
     blueVar = BooleanVar()
     cheBlue = Checkbutton(f1, text="Blue", variable=blueVar)
-    cheBlue.grid(row=7, column=1, pady=5)
+    cheBlue.grid(row=6, column=2, pady=5)
 
     greenVar = BooleanVar()
     cheGreen = Checkbutton(f1, text="Green", variable=greenVar)
-    cheGreen.grid(row=8, column=1, pady=5)
+    cheGreen.grid(row=6, column=3, pady=5)
 
-    winds3.mainloop(windows.destroy())
+ 
+
+    ####################################################################
+
+    f2 = Frame(winds3)
+    f2.pack()
+
+    btnSave = Button(f2, text="Guardar", width=10, command=gravar)
+    btnSave.grid( row=9,column=0,padx=10)
+
+    btnCancel = Button(f2, text="Cancelar", width=10, command=lambda: cancelar())
+    btnCancel.grid(row=9,column=1)
+
+
+    winds3.mainloop()
