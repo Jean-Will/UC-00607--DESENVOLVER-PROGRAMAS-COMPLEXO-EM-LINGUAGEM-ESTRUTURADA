@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.ttk import Checkbutton
+<<<<<<< HEAD
 
 
 def callWindwsLogin():
@@ -7,6 +8,10 @@ def callWindwsLogin():
     mainWindows()
 
 
+=======
+from funcoes import gravar
+from funcoes import cancelar
+>>>>>>> 351331421fb0d3919f5384bb9581c75a463990b2
 
 
 
@@ -29,6 +34,7 @@ def newWindowUser(windows):
 
     f1 = Frame(winds3)
     f1.pack(pady=20)
+
     
     userNameLabel = Label(f1,text="UserName:")
     entryName = Entry(f1)
@@ -78,6 +84,7 @@ def newWindowUser(windows):
     cheGreen = Checkbutton(f1, text="Green", variable=greenVar)
     cheGreen.grid(row=6, column=3, pady=5)
 
+<<<<<<< HEAD
     btnGuardar = Button(f1, text="Guardar", width=10)
     btnGuardar.grid(row=7, column=1, pady=10)
 
@@ -85,4 +92,20 @@ def newWindowUser(windows):
     brnCancelar.grid(row=7, column=2, pady=10)
 
     
+=======
+ 
+
+    ####################################################################
+
+    f2 = Frame(winds3)
+    f2.pack()
+
+    btnSave = Button(f2, text="Guardar", width=10, command=gravar)
+    btnSave.grid( row=9,column=0,padx=10)
+
+    btnCancel = Button(f2, text="Cancelar", width=10, command=lambda: cancelar())
+    btnCancel.grid(row=9,column=1)
+
+
+>>>>>>> 351331421fb0d3919f5384bb9581c75a463990b2
     winds3.mainloop()

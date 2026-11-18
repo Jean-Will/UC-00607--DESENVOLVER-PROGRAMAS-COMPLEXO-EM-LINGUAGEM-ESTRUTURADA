@@ -49,10 +49,19 @@ def login(entryName, entryPassword, way):
 
 def mainWindows():
 
+<<<<<<< HEAD
     windows = Tk()
     windows.title(" -- Login -- ")
     windows.iconbitmap("logopy.ico")
     windows.geometry("400x300")
+=======
+windows = Tk()
+windows.title(" -- Login -- ")
+#windows.iconbitmap("logopy.ico")
+windows.geometry("400x300")
+largura = 400
+altura = 300
+>>>>>>> 351331421fb0d3919f5384bb9581c75a463990b2
 
     largura = 400
     altura = 300
@@ -135,4 +144,34 @@ def mainWindows():
 # EXECUTAR PROGRAMA
 #######################################
 
+<<<<<<< HEAD
 mainWindows()
+=======
+f1.pack(pady=10)
+
+userNameLabel = Label(f1,text="UserName:")
+entryName = Entry(f1)
+userNameLabel.grid(row=0, column=0)
+entryName.grid(row=0, column=1)
+entryName.focus() 
+
+passwordLabel = Label(f1,text="Password:")
+entryPassword = Entry(f1)
+passwordLabel.grid(row=1, column=0, pady=5)
+entryPassword.grid(row=1, column=1, pady=5)
+
+##################################################
+
+f2.pack(pady=20)
+
+btnLogin = Button(f2, text="Login", width=10, command=login)
+btnLogin.grid( row=0,column=0,padx=3)
+
+btnNewUser = Button(f2, text="Novo User", width=10, command=lambda: newWindowUser(windows))
+btnNewUser.grid(row=0,column=1,padx=3)
+
+btnExit = Button(f2, text="Sair", bg="red", fg="White",width=10 ,command=windows.destroy)
+btnExit.grid(row=0, column=2,padx=3)
+
+windows.mainloop()
+>>>>>>> 351331421fb0d3919f5384bb9581c75a463990b2
