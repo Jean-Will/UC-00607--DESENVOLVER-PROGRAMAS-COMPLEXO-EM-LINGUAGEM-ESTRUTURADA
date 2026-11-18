@@ -1,9 +1,18 @@
 from tkinter import *
-from tkinter.ttk import Combobox,Checkbutton
+from tkinter.ttk import Checkbutton
+
+
+def callWindwsLogin():
+    from WinLogin import mainWindows
+    mainWindows()
+
+
 
 
 
 def newWindowUser(windows):
+
+    windows.destroy()
 
     winds3 = Tk()
     winds3.title("Exemplo de Janelas 3")
@@ -63,10 +72,17 @@ def newWindowUser(windows):
 
     blueVar = BooleanVar()
     cheBlue = Checkbutton(f1, text="Blue", variable=blueVar)
-    cheBlue.grid(row=7, column=1, pady=5)
+    cheBlue.grid(row=6, column=2, pady=5)
 
     greenVar = BooleanVar()
     cheGreen = Checkbutton(f1, text="Green", variable=greenVar)
-    cheGreen.grid(row=8, column=1, pady=5)
+    cheGreen.grid(row=6, column=3, pady=5)
 
-    winds3.mainloop(windows.destroy())
+    btnGuardar = Button(f1, text="Guardar", width=10)
+    btnGuardar.grid(row=7, column=1, pady=10)
+
+    brnCancelar = Button(f1, text="Cancelar", width=10, )
+    brnCancelar.grid(row=7, column=2, pady=10)
+
+    
+    winds3.mainloop()
