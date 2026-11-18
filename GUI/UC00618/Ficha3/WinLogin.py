@@ -4,6 +4,8 @@ from tkinter import messagebox
 from WinDados import newWindow
 from WinNewUser import newWindowUser
 
+from funcoes import gravar
+
 
 way = "GUI/UC00618/pass.csv"
 
@@ -40,7 +42,10 @@ def login(entryName, entryPassword, way):
         newWindow()
         return
 
-    messagebox.showerror("Login", "Nome de usuário ou senha incorretos.")
+    messagebox.showerror(
+        "Login",
+        "Nome de usuário ou senha incorretos."
+    )
 
 
 #######################################
@@ -49,19 +54,9 @@ def login(entryName, entryPassword, way):
 
 def mainWindows():
 
-<<<<<<< HEAD
     windows = Tk()
     windows.title(" -- Login -- ")
-    windows.iconbitmap("logopy.ico")
     windows.geometry("400x300")
-=======
-windows = Tk()
-windows.title(" -- Login -- ")
-#windows.iconbitmap("logopy.ico")
-windows.geometry("400x300")
-largura = 400
-altura = 300
->>>>>>> 351331421fb0d3919f5384bb9581c75a463990b2
 
     largura = 400
     altura = 300
@@ -71,14 +66,12 @@ altura = 300
 
     windows.geometry(f"{largura}x{altura}+{x}+{y}")
 
-
     #######################################
     # FRAMES
     #######################################
 
     f1 = Frame(windows)
     f2 = Frame(windows)
-
 
     #######################################
     # CAMPOS DE LOGIN
@@ -98,7 +91,6 @@ altura = 300
 
     passwordLabel.grid(row=1, column=0, pady=5)
     entryPassword.grid(row=1, column=1, pady=5)
-
 
     #######################################
     # BOTÕES
@@ -132,46 +124,11 @@ altura = 300
     )
     btnExit.grid(row=0, column=2, padx=3)
 
-
-    #######################################
-    # MANTER JANELA ABERTA
-    #######################################
+  
 
     windows.mainloop()
 
 
-#######################################
-# EXECUTAR PROGRAMA
-#######################################
+if __name__ == "__main__":
+    mainWindows()
 
-<<<<<<< HEAD
-mainWindows()
-=======
-f1.pack(pady=10)
-
-userNameLabel = Label(f1,text="UserName:")
-entryName = Entry(f1)
-userNameLabel.grid(row=0, column=0)
-entryName.grid(row=0, column=1)
-entryName.focus() 
-
-passwordLabel = Label(f1,text="Password:")
-entryPassword = Entry(f1)
-passwordLabel.grid(row=1, column=0, pady=5)
-entryPassword.grid(row=1, column=1, pady=5)
-
-##################################################
-
-f2.pack(pady=20)
-
-btnLogin = Button(f2, text="Login", width=10, command=login)
-btnLogin.grid( row=0,column=0,padx=3)
-
-btnNewUser = Button(f2, text="Novo User", width=10, command=lambda: newWindowUser(windows))
-btnNewUser.grid(row=0,column=1,padx=3)
-
-btnExit = Button(f2, text="Sair", bg="red", fg="White",width=10 ,command=windows.destroy)
-btnExit.grid(row=0, column=2,padx=3)
-
-windows.mainloop()
->>>>>>> 351331421fb0d3919f5384bb9581c75a463990b2

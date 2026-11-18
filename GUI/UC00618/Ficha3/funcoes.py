@@ -1,6 +1,6 @@
 from tkinter.messagebox import showinfo, showerror
 
-from WinLogin import *
+
 from WinDados import *
 from WinNewUser import *
 
