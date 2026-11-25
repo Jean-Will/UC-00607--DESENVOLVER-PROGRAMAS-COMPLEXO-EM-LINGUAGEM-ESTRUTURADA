@@ -33,7 +33,7 @@ def mostrarDados(sql, colunas):
     con = conectar()
 
     if not con:
-        print("Erro na ligacao a base de dados")
+        #showwarning("Erro na ligacao a base de dados")
         return
 
     cursor = con.cursor()
@@ -96,35 +96,40 @@ def mostrarVendas():
 btnFrutas = Button(
     frameBotoes,
     text="Frutas",
-    command=mostrarFrutas
+    command=mostrarFrutas,
+    width= 7
 )
 btnFrutas.pack(side="left", padx=5)
 
 btnProdutos = Button(
     frameBotoes,
     text="Produtos",
-    command=mostrarProdutos
+    command=mostrarProdutos,
+    width= 7
 )
 btnProdutos.pack(side="left", padx=5)
 
 btnClientes = Button(
     frameBotoes,
     text="Clientes",
-    command=mostrarClientes
+    command=mostrarClientes,
+    width= 7
 )
 btnClientes.pack(side="left", padx=5)
 
 btnVendas = Button(
     frameBotoes,
     text="Vendas",
-    command=mostrarVendas
+    command=mostrarVendas,
+    width= 7
 )
 btnVendas.pack(side="left", padx=5)
 
 btnSair = Button(
     frameBotoes,
     text="Sair",
-    command=exit
+    command=exit,
+    width= 7
 )
 btnSair.pack(side="left", padx=5)
 
