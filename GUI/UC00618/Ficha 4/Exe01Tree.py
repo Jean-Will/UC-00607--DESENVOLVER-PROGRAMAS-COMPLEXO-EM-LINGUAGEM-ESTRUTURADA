@@ -100,6 +100,9 @@ def eliminar():
     tree.delete(linha)
   
 
+def guardar():
+    pass
+
 # 5.  botoes
 
 btnFrutas = Button(
