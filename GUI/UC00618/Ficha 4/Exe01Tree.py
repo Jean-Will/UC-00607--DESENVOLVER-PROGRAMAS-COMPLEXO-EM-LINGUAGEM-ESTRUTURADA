@@ -2,6 +2,9 @@
 from tkinter import *
 from tkinter.ttk import Treeview
 from ligacao import conectar
+from tkinter import messagebox
+
+
 
 win = Tk()
 win.title("Gestão da Base de Dados")
@@ -33,6 +36,7 @@ def mostrarDados(sql, colunas):
     con = conectar()
 
     if not con:
+        
         #showwarning("Erro na ligacao a base de dados")
         return
 
@@ -91,6 +95,11 @@ def mostrarVendas():
     )
 
 
+def eliminar():
+    linha = tree.selection() # ('I00B',)
+    tree.delete(linha)
+  
+
 # 5.  botoes
 
 btnFrutas = Button(
@@ -132,6 +141,14 @@ btnSair = Button(
     width= 7
 )
 btnSair.pack(side="left", padx=5)
+
+btnEliminar = Button(
+    frameBotoes,
+    text="Eliminar",
+    command=eliminar,
+    width= 7
+)
+btnEliminar.pack(side="left", padx=5)
 
 
 # 6. Iniciar a aplicacao
